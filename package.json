@@ -1,0 +1,19 @@
+{
+  "name": "zksync-minter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@matterlabs/hardhat-zksync-deploy": "^0.3.5",
+    "@matterlabs/hardhat-zksync-solc": "^0.3.5",
+    "ethers": "^5.6.9",
+    "hardhat": "^2.10.0",
+    "ts-node": "^10.8.2",
+    "typescript": "^4.7.4",
+    "zksync-web3": "^0.7.9"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.7.0",
+    "dotenv": "^16.0.1"
+  }
+}
