@@ -4,7 +4,7 @@ Mints an NFT on zkSync. A tutorial is available [here](https://dev.to/julienbrg/
 
 ## Motivation
 
-I wanted to provide a tool to create an NFT on zkSync.
+I wanted to provide a tool to create an NFT on [zkSync 2.0 alpha testnet](https://v2-docs.zksync.io/dev/).
 
 ## Install
 
