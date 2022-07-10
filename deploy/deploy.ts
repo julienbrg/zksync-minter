@@ -2,7 +2,7 @@ import { Wallet } from "zksync-web3";
 // import * as ethers from "ethers";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 import { Deployer } from "@matterlabs/hardhat-zksync-deploy";
-import * as metadata from "../nft/thistleMetadata.json";
+import * as metadata from "../nft/metadata.json";
 import * as dotenv from "dotenv";
 import { Web3Storage, Blob, File } from "web3.storage";
 
@@ -16,14 +16,14 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   const deployer = new Deployer(hre, wallet);
   const artifact = await deployer.loadArtifact("Thistle");
 
-  // // Deposit some funds to L2
-  // const depositAmount = ethers.utils.parseEther("0.001");
-  // const depositHandle = await deployer.zkWallet.deposit({
-  //   to: deployer.zkWallet.address,
-  //   token: utils.ETH_ADDRESS,
-  //   amount: depositAmount,
-  // });
-  // await depositHandle.wait();
+  // Deposit some funds to L2
+  const depositAmount = ethers.utils.parseEther("0.001");
+  const depositHandle = await deployer.zkWallet.deposit({
+    to: deployer.zkWallet.address,
+    token: utils.ETH_ADDRESS,
+    amount: depositAmount,
+  });
+  await depositHandle.wait();
 
   function getAccessToken() {
     console.log("✅ getAccessToken");
