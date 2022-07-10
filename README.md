@@ -1,5 +1,7 @@
 # zkSync Minter
 
+Mints an NFT on zkSync. A tutorial is available [here](https://dev.to/julienbrg/mint-an-nft-on-zksync-20-4bi0).
+
 ## Motivation
 
 I wanted to provide a tool to create an NFT on zkSync.

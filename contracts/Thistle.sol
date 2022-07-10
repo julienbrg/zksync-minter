@@ -7,8 +7,10 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Thistle is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
-    constructor(string memory uri) ERC721("Thisle", "THISTLE") {
+    
+    constructor(string memory uri) ERC721("Thistle", "THISTLE") {
         safeMint(msg.sender, 1, uri);
+        renounceOwnership();
     }
 
     function _baseURI() internal pure override returns (string memory) {
