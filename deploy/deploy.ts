@@ -16,14 +16,14 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   const deployer = new Deployer(hre, wallet);
   const artifact = await deployer.loadArtifact("Thistle");
 
-  // Deposit some funds to L2
-  const depositAmount = ethers.utils.parseEther("0.001");
-  const depositHandle = await deployer.zkWallet.deposit({
-    to: deployer.zkWallet.address,
-    token: utils.ETH_ADDRESS,
-    amount: depositAmount,
-  });
-  await depositHandle.wait();
+  // // Deposit some funds to L2
+  // const depositAmount = ethers.utils.parseEther("0.001");
+  // const depositHandle = await deployer.zkWallet.deposit({
+  //   to: deployer.zkWallet.address,
+  //   token: utils.ETH_ADDRESS,
+  //   amount: depositAmount,
+  // });
+  // await depositHandle.wait();
 
   function getAccessToken() {
     console.log("✅ getAccessToken");
@@ -63,11 +63,14 @@ export default async function (hre: HardhatRuntimeEnvironment) {
   console.log("✅ uri: ", uri);
 
   // Deploy this contract. The returned object will be of a `Contract` type, similarly to ones in `ethers`.
-  const thistleContract = await deployer.deploy(artifact, [metadata]);
+  const thistleContract = await deployer.deploy(artifact, [uri]);
+  await thistleContract.deployed();
 
   // Show the contract info.
   const contractAddress = thistleContract.address;
   console.log("");
   console.log(`${metadata.name} was deployed to ${contractAddress} 🎉 `);
   console.log("");
+
+  console.log("uri from contract: ", await thistleContract.tokenURI(1));
 }
