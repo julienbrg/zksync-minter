@@ -5,3 +5,4 @@ cache-zk
 yarn.lock
 package.lock
 .DS_Store
+.NOTES.md
