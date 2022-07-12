@@ -23,6 +23,10 @@ yarn
 yarn hardhat deploy-zksync
 ```
 
+See an example NFT here: [https://ato.network/ZkSync/0xccA0521D453cA8C84Cb0b56936A4B764992b2F12/1](https://ato.network/ZkSync/0xccA0521D453cA8C84Cb0b56936A4B764992b2F12/1)
+
+You can view your own NFT using [Āto Scanner](https://ato.network/).
+
 ## Credits
 
 I mainly used zkSync docs: [https://v2-docs.zksync.io/api/hardhat/getting-started.html](https://v2-docs.zksync.io/api/hardhat/getting-started.html)
