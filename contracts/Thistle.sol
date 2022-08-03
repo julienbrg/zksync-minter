@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract Thistle is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
+contract DaVinci is ERC721, ERC721URIStorage, ERC721Burnable, Ownable {
     
     constructor(string memory uri) ERC721("Thistle", "THISTLE") {
         safeMint(msg.sender, 1, uri);
